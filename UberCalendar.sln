@@ -5,6 +5,12 @@ VisualStudioVersion = 15.0.28307.329
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UberCalendarUI", "UberCalendarUI\UberCalendarUI.csproj", "{D9B9B8BF-68FD-4A50-97E0-82553EEED18E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Model", "Model\Model.csproj", "{66340721-7D9D-46D5-A310-6403C1113348}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UberCalendarWebService", "UberCalendarWebService\UberCalendarWebService.csproj", "{339201D2-5E01-44C6-92F6-7C4C45EBC7E7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SQLDataHandler", "SQLDataHandler\SQLDataHandler.csproj", "{B28F768E-A21E-427D-9269-A5EFA0F021FA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +21,18 @@ Global
 		{D9B9B8BF-68FD-4A50-97E0-82553EEED18E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D9B9B8BF-68FD-4A50-97E0-82553EEED18E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D9B9B8BF-68FD-4A50-97E0-82553EEED18E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{66340721-7D9D-46D5-A310-6403C1113348}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{66340721-7D9D-46D5-A310-6403C1113348}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{66340721-7D9D-46D5-A310-6403C1113348}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{66340721-7D9D-46D5-A310-6403C1113348}.Release|Any CPU.Build.0 = Release|Any CPU
+		{339201D2-5E01-44C6-92F6-7C4C45EBC7E7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{339201D2-5E01-44C6-92F6-7C4C45EBC7E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{339201D2-5E01-44C6-92F6-7C4C45EBC7E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{339201D2-5E01-44C6-92F6-7C4C45EBC7E7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B28F768E-A21E-427D-9269-A5EFA0F021FA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B28F768E-A21E-427D-9269-A5EFA0F021FA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B28F768E-A21E-427D-9269-A5EFA0F021FA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B28F768E-A21E-427D-9269-A5EFA0F021FA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

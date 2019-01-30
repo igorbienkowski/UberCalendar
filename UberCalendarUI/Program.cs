@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using UberCalendarUI.Data;
+using UberCalendarUI.UI;
 
 namespace UberCalendarUI
 {
@@ -16,7 +18,7 @@ namespace UberCalendarUI
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new LogInForm(new WebApiDataHandler()));
         }
     }
 }
