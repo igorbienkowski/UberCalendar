@@ -162,6 +162,8 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\UberCalendarController.cs" />
+    <Compile Include="Data\SqlDataHandler.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -197,6 +199,7 @@
     <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\CollectionModelDescription.cshtml" />
     <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\ApiGroup.cshtml" />
     <Content Include="Areas\HelpPage\Views\Help\Api.cshtml" />
+    <Content Include="DBConnections.config" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -255,6 +258,18 @@
     <ProjectReference Include="..\Model\Model.csproj">
       <Project>{66340721-7d9d-46d5-a310-6403c1113348}</Project>
       <Name>Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PasswordDecrypter\PasswordDecrypter.csproj">
+      <Project>{de517344-f71e-4ed4-bbd4-b7fa63a4565b}</Project>
+      <Name>PasswordDecrypter</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PasswordEncrypter\PasswordEncrypter.csproj">
+      <Project>{95758b55-3b32-4a6c-b7b7-76c2e54c3935}</Project>
+      <Name>PasswordEncrypter</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SQLDataHandler\SQLDataHandler.csproj">
+      <Project>{b28f768e-a21e-427d-9269-a5efa0f021fa}</Project>
+      <Name>SQLDataHandler</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

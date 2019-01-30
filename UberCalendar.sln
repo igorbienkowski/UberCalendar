@@ -11,6 +11,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UberCalendarWebService", "U
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SQLDataHandler", "SQLDataHandler\SQLDataHandler.csproj", "{B28F768E-A21E-427D-9269-A5EFA0F021FA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PasswordEncrypter", "PasswordEncrypter\PasswordEncrypter.csproj", "{95758B55-3B32-4A6C-B7B7-76C2E54C3935}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PasswordDecrypter", "PasswordDecrypter\PasswordDecrypter.csproj", "{DE517344-F71E-4ED4-BBD4-B7FA63A4565B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +37,14 @@ Global
 		{B28F768E-A21E-427D-9269-A5EFA0F021FA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B28F768E-A21E-427D-9269-A5EFA0F021FA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B28F768E-A21E-427D-9269-A5EFA0F021FA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{95758B55-3B32-4A6C-B7B7-76C2E54C3935}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{95758B55-3B32-4A6C-B7B7-76C2E54C3935}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{95758B55-3B32-4A6C-B7B7-76C2E54C3935}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{95758B55-3B32-4A6C-B7B7-76C2E54C3935}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DE517344-F71E-4ED4-BBD4-B7FA63A4565B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DE517344-F71E-4ED4-BBD4-B7FA63A4565B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DE517344-F71E-4ED4-BBD4-B7FA63A4565B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DE517344-F71E-4ED4-BBD4-B7FA63A4565B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
