@@ -13,7 +13,7 @@ namespace UberCalendarUI.Data
 
         void AddEvent(CalendarEvent @event);
 
-        void RegisterUser(CalendarUser user,CalendarUserCredentials credentials);
+        void RegisterUser(UserToRegister user);
 
         CalendarUser CredentialsCheck(CalendarUserCredentials credentials);
     }

@@ -29,9 +29,19 @@ namespace UberCalendarWebService.Controllers
         }
 
         [HttpPost]
-        public void RegisterUser([FromBody] CalendarUser userJson, [FromBody] CalendarUserCredentials credentials)
+        public void RegisterUser([FromBody] UserToRegister userJson)
         {
-            dataHandler.RegisterUser(userJson,credentials);
+            CalendarUser user = new CalendarUser();
+            CalendarUserCredentials credentials = new CalendarUserCredentials();
+            user.Name = userJson.Name;
+            user.Surname = userJson.Surname;
+            user.DateOfBirth = userJson.DateOfBirth;
+            user.UserID = userJson.UserID;
+
+            credentials.Email = userJson.Email;
+            credentials.Password = userJson.Password;
+
+            dataHandler.RegisterUser(user,credentials);
         }
 
         [HttpPost]

@@ -53,16 +53,6 @@ namespace UberCalendarUI.UI
                 MessageBox.Show("Password doesn't match.");
                 return;
             }
-            if (passwordTB.Text.Length <= 8)
-            {
-                MessageBox.Show("Password is to short.");
-                return;
-            }
-            if (!emailTB.Text.Contains("@"))
-            {
-                MessageBox.Show("Email is incorrect.");
-                return;
-            }
 
             CalendarUser newUser = new CalendarUser();
             newUser.Name = nameTB.Text;
@@ -74,7 +64,11 @@ namespace UberCalendarUI.UI
             CalendarUserCredentials credentials = new CalendarUserCredentials();
             credentials.Email = emailTB.Text;
             credentials.Password = encrypter.Encrypt(passwordTB.Text);
-            dataHandler.RegisterUser(newUser,credentials);
+
+            UserToRegister userToRegister = new UserToRegister();
+            userToRegister = userToRegister.Create(newUser, credentials);
+            dataHandler.RegisterUser(userToRegister);
+            MessageBox.Show("Account created successfully.");
         }
     }
 

@@ -47,23 +47,16 @@ namespace UberCalendarUI.Data
             return events;
         }
 
-        public void RegisterUser(CalendarUser user,CalendarUserCredentials credentials)
+        public void RegisterUser(UserToRegister userToRegister)
         {
-            //
-            //bug: can't send 2 different objects by WebClient
-            //
-
             wc.Headers.Add("Content-Type", "application/json");
             wc.Headers.Add("Data-Type", "application/json");
-            string userJson = "{\"userJson\":[" + serializer.Serialize(user) + "],\"credentials\":[" + serializer.Serialize(credentials) + "]}";
-            
-                //= serializer.Serialize(user) + "," + serializer.Serialize(credentials);
+            string userJson = serializer.Serialize(userToRegister);
             wc.UploadString(wc.BaseAddress + "RegisterUser", "Post", userJson);
         }
 
         public void AddEvent(CalendarEvent eventToPost)
         {
-
             wc.Headers.Add("Content-Type", "application/json");
             wc.Headers.Add("Data-Type", "application/json");
             string eventJson = serializer.Serialize(eventToPost);
