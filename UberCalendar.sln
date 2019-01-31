@@ -5,15 +5,17 @@ VisualStudioVersion = 15.0.28307.329
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UberCalendarUI", "UberCalendarUI\UberCalendarUI.csproj", "{D9B9B8BF-68FD-4A50-97E0-82553EEED18E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Model", "Model\Model.csproj", "{66340721-7D9D-46D5-A310-6403C1113348}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Model", "Model\Model.csproj", "{66340721-7D9D-46D5-A310-6403C1113348}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UberCalendarWebService", "UberCalendarWebService\UberCalendarWebService.csproj", "{339201D2-5E01-44C6-92F6-7C4C45EBC7E7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SQLDataHandler", "SQLDataHandler\SQLDataHandler.csproj", "{B28F768E-A21E-427D-9269-A5EFA0F021FA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SQLDataHandler", "SQLDataHandler\SQLDataHandler.csproj", "{B28F768E-A21E-427D-9269-A5EFA0F021FA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PasswordEncrypter", "PasswordEncrypter\PasswordEncrypter.csproj", "{95758B55-3B32-4A6C-B7B7-76C2E54C3935}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PasswordEncrypter", "PasswordEncrypter\PasswordEncrypter.csproj", "{95758B55-3B32-4A6C-B7B7-76C2E54C3935}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PasswordDecrypter", "PasswordDecrypter\PasswordDecrypter.csproj", "{DE517344-F71E-4ED4-BBD4-B7FA63A4565B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PasswordDecrypter", "PasswordDecrypter\PasswordDecrypter.csproj", "{DE517344-F71E-4ED4-BBD4-B7FA63A4565B}"
+EndProject
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "UberCalendarPythonClient", "UberCalendarPythonClient\UberCalendarPythonClient.pyproj", "{20D931BE-B7CC-48CB-897E-C5BC7AFD98DC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +47,8 @@ Global
 		{DE517344-F71E-4ED4-BBD4-B7FA63A4565B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DE517344-F71E-4ED4-BBD4-B7FA63A4565B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DE517344-F71E-4ED4-BBD4-B7FA63A4565B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{20D931BE-B7CC-48CB-897E-C5BC7AFD98DC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{20D931BE-B7CC-48CB-897E-C5BC7AFD98DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
