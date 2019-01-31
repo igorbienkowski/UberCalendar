@@ -1,20 +1,18 @@
 from tkinter import *
 
-root = Tk()
-topFrame = Frame(root)
-topFrame.pack(side=TOP)
+login_window = Tk()
 
-bottomFrame = Frame(root)
-bottomFrame.pack(side=BOTTOM)
+label_email = Label(login_window, text="Email:")
+label_password = Label(login_window, text="Password:")
+entry_email = Entry(login_window)
+entry_password = Entry(login_window)
+login_button = Button(login_window, text="Log In")
+register_button = Button(login_window, text="Register")
+label_email.grid(row=2, column=2, sticky=W)
+label_password.grid(row=2, column=3, sticky=W)
+entry_email.grid(row=3, column=2)
+entry_password.grid(row=3, column=3)
+login_button.grid(row=4, columnspan=6)
+register_button.grid(row=5, columnspan=6)
 
-button1 = Button(topFrame, text="Button 1", fg="red")
-button2 = Button(topFrame, text="Button 2", fg="blue")
-button3 = Button(topFrame, text="Button 3", fg="green")
-button4 = Button(bottomFrame, text="Button 4", fg="yellow")
-
-button1.pack(side=LEFT)
-button2.pack(side=LEFT)
-button3.pack(side=LEFT)
-button4.pack()
-
-root.mainloop()
+login_window.mainloop()
