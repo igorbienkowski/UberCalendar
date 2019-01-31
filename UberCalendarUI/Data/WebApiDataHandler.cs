@@ -18,15 +18,25 @@ namespace UberCalendarUI.Data
 
         public WebApiDataHandler()
         {
-            wc.BaseAddress = "http://localhost:8080/UltimateCalendarDefault/";
+            wc.BaseAddress = "http://localhost:8080/UberCalendar/";
+            int testPort = 50925;
         }
 
 
-        public bool CredentialsCheck(string email, string password, out CalendarUser loggedInUser)
+        public CalendarUser CredentialsCheck(CalendarUserCredentials credentials)
         {
-            string message = wc.DownloadString($"{wc.BaseAddress}GetUser?email={email}&password={password}");
-            loggedInUser = serializer.Deserialize<CalendarUser>(message);
-            return true;
+            //
+            //bug: this methods doesn't returns calendarUser
+            //
+
+            wc.Headers.Add("Content-Type", "application/json");
+            wc.Headers.Add("Data-Type", "application/json");
+            string userJson = serializer.Serialize(credentials);
+            string test = wc.BaseAddress + "GetUser" + userJson;
+            var loggedInUser =  wc.UploadString(wc.BaseAddress + "GetUser", "Post", userJson);
+            // CalendarUser loggedInUser = serializer.Deserialize<CalendarUser>);
+            //return loggedInUser;
+            return new CalendarUser();
         }
 
         public List<CalendarEvent> GetEvents(DateTime dateForEvents, CalendarUser loggedInUser)
@@ -37,36 +47,27 @@ namespace UberCalendarUI.Data
             return events;
         }
 
-        public string RegisterUser(CalendarUser user)
+        public void RegisterUser(CalendarUser user,CalendarUserCredentials credentials)
         {
+            //
+            //bug: can't send 2 different objects by WebClient
+            //
 
             wc.Headers.Add("Content-Type", "application/json");
             wc.Headers.Add("Data-Type", "application/json");
-            string userJson = serializer.Serialize(user);
-            try
-            {
-                return wc.UploadString(wc.BaseAddress + "RegisterUser", "Post", userJson);
-            }
-            catch (Exception ex)
-            {
-                return "Couldn't register user. " + ex.Message;
-            }
+            string userJson = "{\"userJson\":[" + serializer.Serialize(user) + "],\"credentials\":[" + serializer.Serialize(credentials) + "]}";
+            
+                //= serializer.Serialize(user) + "," + serializer.Serialize(credentials);
+            wc.UploadString(wc.BaseAddress + "RegisterUser", "Post", userJson);
         }
 
-        public string AddEvent(CalendarEvent eventToPost)
+        public void AddEvent(CalendarEvent eventToPost)
         {
 
             wc.Headers.Add("Content-Type", "application/json");
             wc.Headers.Add("Data-Type", "application/json");
             string eventJson = serializer.Serialize(eventToPost);
-            try
-            {
-                return wc.UploadString(wc.BaseAddress + "PostEvent", "Post", eventJson);
-            }
-            catch (Exception ex)
-            {
-                return "Couldn't add the event. " + ex.Message;
-            }
+            wc.UploadString(wc.BaseAddress + "PostEvent", "Post", eventJson);
         }
     }
 }

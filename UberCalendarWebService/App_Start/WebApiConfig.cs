@@ -15,9 +15,9 @@ namespace UberCalendarWebService
             config.MapHttpAttributeRoutes();
 
             config.Routes.MapHttpRoute(
-                name: "UltimateCalendarDefault",
-                routeTemplate: "UltimateCalendarDefault/{action}/{id}",
-                defaults: new { controller = "UltimateCalendarDefault", id = RouteParameter.Optional }
+                name: "UberCalendar",
+                routeTemplate: "UberCalendar/{action}/{id}",
+                defaults: new { controller = "UberCalendar", id = RouteParameter.Optional }
                 );
 
             config.Routes.MapHttpRoute(

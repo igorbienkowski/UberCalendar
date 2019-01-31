@@ -39,7 +39,7 @@ namespace UberCalendarUI.UI
             newEvent.Description = descriptionTB.Text;
             newEvent.Type = eventTypeCB.Text;
             newEvent.UserId = loggedUser.UserID;
-            MessageBox.Show(dataHandler.AddEvent(newEvent));
+            dataHandler.AddEvent(newEvent);
             Close();
         }
 

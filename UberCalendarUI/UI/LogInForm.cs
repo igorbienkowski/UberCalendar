@@ -1,4 +1,5 @@
 ﻿using Model;
+using PasswordEncrypter;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -35,17 +36,17 @@ namespace UberCalendarUI.UI
 
         private void logInBTN_Click(object sender, EventArgs e)
         {
-            CalendarUser user = new CalendarUser();
-            if (dataHandler.CredentialsCheck(emailTB.Text, passwordTB.Text, out user))
-            {
-                CalendarForm calendar = new CalendarForm(dataHandler, user);
-                calendar.Show();
-                this.Hide();
-            }
-            else
-            {
-                MessageBox.Show("Incorrect login details");
-            }
+            CalendarUserCredentials credentials = new CalendarUserCredentials();
+            Encrypter encrypter = new Encrypter();
+            credentials.Email = emailTB.Text;
+            credentials.Password = encrypter.Encrypt(passwordTB.Text);
+
+            
+            //need to add some credentials verification
+            CalendarUser loggedInUser = dataHandler.CredentialsCheck(credentials);
+            CalendarForm calendar = new CalendarForm(dataHandler, loggedInUser);
+            calendar.Show();
+            this.Hide();
         }
     }
 }

@@ -10,27 +10,25 @@ namespace SQLDataHandler
     {
         private CalendarUser user;
 
-        private string passwordInput;
-        private string emailInput;
+        CalendarUserCredentials credentials;
 
         public GetUserFromDB(string connectionString) : base(connectionString)
         {
         }
 
-        public CalendarUser GetUser(string password, string email)
+        public CalendarUser GetUser(CalendarUserCredentials credentials)
         {
             user = new CalendarUser();
-            passwordInput = password;
-            emailInput = email;
+            this.credentials = credentials;
             Execute();
             return user;
         }
 
         public override void ExecuteCommand()
         {
-            command.CommandText = "SELECT * FROM users WHERE Email = @Email AND Password = @Password LIMIT 1;";
-            command.Parameters.AddWithValue("@Email", emailInput);
-            command.Parameters.AddWithValue("@Password", passwordInput);
+            command.CommandText = "SELECT * FROM users a LEFT JOIN user_credentials b ON a.ID = b.userId WHERE email = @Email AND password = @Password LIMIT 1;";
+            command.Parameters.AddWithValue("@Email", credentials.Email);
+            command.Parameters.AddWithValue("@Password", credentials.Password);
             using (MySqlDataReader reader = command.ExecuteReader())
             {
                 while (reader.Read())
@@ -39,8 +37,6 @@ namespace SQLDataHandler
                     user.Name = (string)reader["FirstName"];
                     user.Surname = (string)reader["LastName"];
                     user.DateOfBirth = (DateTime)reader["DateOfBirth"];
-                    user.Password = (string)reader["Password"];
-                    user.Email = (string)reader["Email"];
                 }
             }
         }

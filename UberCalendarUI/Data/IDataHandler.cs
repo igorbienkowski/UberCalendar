@@ -11,10 +11,10 @@ namespace UberCalendarUI.Data
     {
         List<CalendarEvent> GetEvents(DateTime dateForEvents, CalendarUser userForEvents);
 
-        string AddEvent(CalendarEvent @event);
+        void AddEvent(CalendarEvent @event);
 
-        string RegisterUser(CalendarUser user);
+        void RegisterUser(CalendarUser user,CalendarUserCredentials credentials);
 
-        bool CredentialsCheck(string email, string password, out CalendarUser loggedInUser);
+        CalendarUser CredentialsCheck(CalendarUserCredentials credentials);
     }
 }

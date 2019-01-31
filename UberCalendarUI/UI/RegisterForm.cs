@@ -1,4 +1,5 @@
 ﻿using Model;
+using PasswordEncrypter;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -67,10 +68,13 @@ namespace UberCalendarUI.UI
             newUser.Name = nameTB.Text;
             newUser.Surname = surnameTB.Text;
             newUser.DateOfBirth = dobTP.Value;
-            newUser.Email = emailTB.Text;
-            newUser.Password = passwordTB.Text;
 
-            MessageBox.Show(dataHandler.RegisterUser(newUser));
+            Encrypter encrypter = new Encrypter();
+
+            CalendarUserCredentials credentials = new CalendarUserCredentials();
+            credentials.Email = emailTB.Text;
+            credentials.Password = encrypter.Encrypt(passwordTB.Text);
+            dataHandler.RegisterUser(newUser,credentials);
         }
     }
 

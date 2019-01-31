@@ -11,14 +11,12 @@ namespace Model
 
         }
 
-        public CalendarUser(int ID, string name, string surname, DateTime dateOfBirth, string email, string password)
+        public CalendarUser(int ID, string name, string surname, DateTime dateOfBirth)
         {
             this.UserID = ID;
             this.Name = name;
             this.Surname = surname;
             this.DateOfBirth = dateOfBirth;
-            this.Email = email;
-            this.Password = password;
         }
 
         public int UserID { get; set; }
@@ -28,10 +26,6 @@ namespace Model
         public string Surname { get; set; }
 
         public DateTime DateOfBirth { get; set; }
-
-        public string Email { get; set; }
-
-        public string Password { get; set; }
     }
 
 

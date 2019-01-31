@@ -14,11 +14,11 @@ namespace UberCalendarWebService.Controllers
     {
         SqlDataHandler dataHandler = new SqlDataHandler(ConfigurationManager.ConnectionStrings["GCPMySqlDB"].ConnectionString);
 
-        [HttpGet]
-        public CalendarUser GetUser(string email, string password)
+        [HttpPost]
+        public CalendarUser GetUser([FromBody]CalendarUserCredentials credentials)
         {
             CalendarUser user = new CalendarUser();
-            dataHandler.CredentialsCheck(email, password, out user);
+            dataHandler.CredentialsCheck(credentials, out user);
             return user;
         }
 
@@ -29,15 +29,15 @@ namespace UberCalendarWebService.Controllers
         }
 
         [HttpPost]
-        public string RegisterUser([FromBody] CalendarUser userJson)
+        public void RegisterUser([FromBody] CalendarUser userJson, [FromBody] CalendarUserCredentials credentials)
         {
-            return dataHandler.RegisterUser(userJson);
+            dataHandler.RegisterUser(userJson,credentials);
         }
 
         [HttpPost]
-        public string PostEvent([FromBody] CalendarEvent eventJson)
+        public void PostEvent([FromBody] CalendarEvent eventJson)
         {
-            return dataHandler.AddEvent(eventJson);
+            dataHandler.AddEvent(eventJson);
         }
     }
 }
