@@ -40,10 +40,17 @@ namespace UberCalendarUI.UI
             Encrypter encrypter = new Encrypter();
             credentials.Email = emailTB.Text;
             credentials.Password = encrypter.Encrypt(passwordTB.Text);
+            CalendarUser loggedInUser = null;
+            try
+            { 
+                loggedInUser = dataHandler.CredentialsCheck(credentials);
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return;
+            }
 
-            
-            //need to add some credentials verification
-            CalendarUser loggedInUser = dataHandler.CredentialsCheck(credentials);
             CalendarForm calendar = new CalendarForm(dataHandler, loggedInUser);
             calendar.Show();
             this.Hide();

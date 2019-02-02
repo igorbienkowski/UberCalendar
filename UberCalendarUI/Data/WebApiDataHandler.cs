@@ -27,18 +27,15 @@ namespace UberCalendarUI.Data
 
         public CalendarUser CredentialsCheck(CalendarUserCredentials credentials)
         {
-            //
-            //bug: this methods doesn't returns calendarUser
-            //
-
             wc.Headers.Add("Content-Type", "application/json");
             wc.Headers.Add("Data-Type", "application/json");
             string userJson = serializer.Serialize(credentials);
             string test = wc.BaseAddress + "GetUser" + userJson;
-            var loggedInUser =  wc.UploadString(wc.BaseAddress + "GetUser", "Post", userJson);
-            // CalendarUser loggedInUser = serializer.Deserialize<CalendarUser>);
-            //return loggedInUser;
-            return new CalendarUser();
+            CalendarUser loggedInUser = serializer.Deserialize<CalendarUser>(wc.UploadString(wc.BaseAddress + "GetUser", "Post", userJson));
+            if (loggedInUser.Name != "" && loggedInUser.Surname != "" && loggedInUser.Name != null && loggedInUser.Surname != null)
+                return loggedInUser;
+            else
+                throw new ArgumentException("Incorrect log in details.");
         }
 
         public List<CalendarEvent> GetEvents(DateTime dateForEvents, CalendarUser loggedInUser)
