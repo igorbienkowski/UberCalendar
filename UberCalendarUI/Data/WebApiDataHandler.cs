@@ -18,8 +18,10 @@ namespace UberCalendarUI.Data
 
         public WebApiDataHandler()
         {
-            wc.BaseAddress = "http://localhost:8080/UberCalendar/";
+            int BaseAdressPort = 8080;
+            wc.BaseAddress = $"http://localhost:{BaseAdressPort}/UberCalendar/";
             int testPort = 50925;
+            int IISPort = 8080;
         }
 
 

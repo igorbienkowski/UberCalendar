@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>20d931be-b7cc-48cb-897e-c5bc7afd98dc</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>UberCalendarPythonClient.py</StartupFile>
+    <StartupFile>CalendarEvent.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -21,6 +21,27 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="CalendarEvent.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CalendarUser.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Decrypter.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Encrypter.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EventType.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="UserCredentials.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WebApiDataHandler.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="UberCalendarPythonClient.py" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
