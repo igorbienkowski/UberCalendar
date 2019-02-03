@@ -6,6 +6,7 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using System.Web.Script.Serialization;
 using UberCalendarWebService.Data;
 
 namespace UberCalendarWebService.Controllers
@@ -13,10 +14,12 @@ namespace UberCalendarWebService.Controllers
     public class UberCalendarController : ApiController
     {
         SqlDataHandler dataHandler = new SqlDataHandler(ConfigurationManager.ConnectionStrings["GCPMySqlDB"].ConnectionString);
+        JavaScriptSerializer serializer = new JavaScriptSerializer();
 
         [HttpPost]
-        public CalendarUser GetUser([FromBody]CalendarUserCredentials credentials)
+        public CalendarUser GetUser([FromBody]string json)
         {
+            CalendarUserCredentials credentials = serializer.Deserialize<CalendarUserCredentials>(json);
             CalendarUser user = new CalendarUser();
             dataHandler.CredentialsCheck(credentials, out user);
             return user;
@@ -29,25 +32,27 @@ namespace UberCalendarWebService.Controllers
         }
 
         [HttpPost]
-        public void RegisterUser([FromBody] UserToRegister userJson)
+        public void RegisterUser([FromBody] string userJson)
         {
+            UserToRegister userToRegister = serializer.Deserialize<UserToRegister>(userJson);
             CalendarUser user = new CalendarUser();
             CalendarUserCredentials credentials = new CalendarUserCredentials();
-            user.Name = userJson.Name;
-            user.Surname = userJson.Surname;
-            user.DateOfBirth = userJson.DateOfBirth;
-            user.UserID = userJson.UserID;
+            user.Name = userToRegister.Name;
+            user.Surname = userToRegister.Surname;
+            user.DateOfBirth = userToRegister.DateOfBirth;
+            user.UserID = userToRegister.UserID;
 
-            credentials.Email = userJson.Email;
-            credentials.Password = userJson.Password;
+            credentials.Email = userToRegister.Email;
+            credentials.Password = userToRegister.Password;
 
             dataHandler.RegisterUser(user,credentials);
         }
 
         [HttpPost]
-        public void PostEvent([FromBody] CalendarEvent eventJson)
+        public void PostEvent([FromBody] string eventJson)
         {
-            dataHandler.AddEvent(eventJson);
+            CalendarEvent calendarEvent = serializer.Deserialize<CalendarEvent>(eventJson); 
+            dataHandler.AddEvent(calendarEvent);
         }
     }
 }

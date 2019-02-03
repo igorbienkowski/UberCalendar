@@ -51,7 +51,4 @@ class CalendarEvent():
     time = property(get_time,set_time)
     type = property(get_type,set_type)
 
-event = CalendarEvent(7,"asdfasdf",22,"17/01/2019","17:23","Meeting")
-print(event)
-
         
