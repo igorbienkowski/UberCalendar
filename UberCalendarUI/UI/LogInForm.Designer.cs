@@ -93,7 +93,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(238, 113);
+            this.ClientSize = new System.Drawing.Size(240, 120);
             this.Controls.Add(this.registerBTN);
             this.Controls.Add(this.passwordTB);
             this.Controls.Add(this.label2);

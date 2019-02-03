@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>20d931be-b7cc-48cb-897e-c5bc7afd98dc</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>WebApiDataHandler.py</StartupFile>
+    <StartupFile>UI\CalendarFrame.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -21,28 +21,45 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="CalendarEvent.py">
+    <Compile Include="Data\CalendarEvent.py">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="CalendarUser.py">
+    <Compile Include="Data\CalendarUser.py">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Decrypter.py">
+    <Compile Include="Data\Decrypter.py">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Encrypter.py">
+    <Compile Include="Data\Encrypter.py">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="EventType.py">
+    <Compile Include="Data\EventType.py">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="UserCredentials.py">
+    <Compile Include="Data\UserCredentials.py">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="WebApiDataHandler.py">
+    <Compile Include="Controller\WebApiDataHandler.py">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="UberCalendarPythonClient.py" />
+    <Compile Include="UI\AddEventFrame.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="UI\CalendarFrame.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="UI\LogInFrame.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="UI\RegisterUserFrame.py">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Data\" />
+    <Folder Include="Controller\" />
+    <Folder Include="UI\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in

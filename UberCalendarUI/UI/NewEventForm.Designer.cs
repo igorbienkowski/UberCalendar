@@ -85,7 +85,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(356, 232);
+            this.ClientSize = new System.Drawing.Size(360, 230);
             this.Controls.Add(this.addEventBTN);
             this.Controls.Add(this.eventTimePicker);
             this.Controls.Add(this.eventTypeCB);

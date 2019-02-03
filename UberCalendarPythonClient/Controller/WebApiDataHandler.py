@@ -1,13 +1,12 @@
 import requests
 import json
 import datetime
-from UserCredentials import UserCredentials
 from CalendarUser import CalendarUser
 from CalendarEvent import CalendarEvent
 
 class WebApiDataHandler():
     def __init__(self):
-        base_adress_port = 50925
+        base_adress_port = 8080
         self.url = "http://localhost:" + str(base_adress_port) + "/UberCalendar/"
         iis_port = 8080
         test_port = 50925
