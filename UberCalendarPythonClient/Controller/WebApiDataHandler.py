@@ -1,8 +1,8 @@
 import requests
 import json
 import datetime
-from CalendarUser import CalendarUser
-from CalendarEvent import CalendarEvent
+from Data.CalendarUser import CalendarUser
+from Data.CalendarEvent import CalendarEvent
 
 class WebApiDataHandler():
     def __init__(self):

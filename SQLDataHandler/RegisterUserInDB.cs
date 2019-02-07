@@ -20,12 +20,14 @@ namespace SQLDataHandler
                 command.Parameters.AddWithValue("@LastName", surname);
                 command.Parameters.AddWithValue("@DateOfBirth", dob);
                 connection.Open();
-                command.ExecuteNonQuery();
 
+                MySqlTransaction transaction = connection.BeginTransaction();
+                command.ExecuteNonQuery();
                 command.CommandText = "INSERT INTO user_credentials (userId, Email, Password) VALUES (last_insert_id(), @Email, @Password)";
                 command.Parameters.AddWithValue("@Email", credentials.Email);
                 command.Parameters.AddWithValue("@Password", credentials.Password);
                 command.ExecuteNonQuery();
+                transaction.Commit();
             }
         }
     }

@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>20d931be-b7cc-48cb-897e-c5bc7afd98dc</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>UI\CalendarFrame.py</StartupFile>
+    <StartupFile>Controller\WebApiDataHandler.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
